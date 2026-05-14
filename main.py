@@ -24,7 +24,6 @@ def main() -> None:
     print_table(table)
     current_player = 0
     flag = True
-    player = 0
     while(flag):
         prop = PLAYER_1_SING if current_player == 0 else PLAYER_2_SING
         user_input = get_input_with_timeout('Where would you like to put it?: ', TIMER)
@@ -59,7 +58,7 @@ def main() -> None:
                     print(f"Player {current_player + 1} is the winner!!")
                     flag = False
                 else:
-                    player = (current_player + 1) % NUM_OF_PLAYERS
+                    current_player = (current_player + 1) % NUM_OF_PLAYERS
                     print(f'Player-{current_player + 1} turn:')
                     print_table(table)
 

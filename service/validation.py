@@ -1,5 +1,6 @@
 from typing import List ,Dict
 
+
 def validaty_location(user_input : str, table : List[List[Dict[str,str]]]) -> bool:
     max_colm = len(table[0])
     try:
@@ -7,10 +8,9 @@ def validaty_location(user_input : str, table : List[List[Dict[str,str]]]) -> bo
         if enter_location < 0 or enter_location > max_colm -1 or table[0][enter_location]['type'] != " ":
             return False
         return True
-    except ValueError:
+    except ValueError,Exception:
             return False
-    except Exception:
-        return False
+
 
 def validaty_tie(table : List[List[Dict[str,str]]]) -> bool:
     for row in table:
